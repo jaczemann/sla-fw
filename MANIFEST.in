@@ -1,0 +1,6 @@
+recursive-include slafw *
+recursive-include systemd *
+recursive-include dbus *
+global-exclude *.py[cod]
+prune slafw/tests
+prune slafw/utils

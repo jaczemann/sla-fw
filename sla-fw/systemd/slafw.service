@@ -1,0 +1,16 @@
+[Unit]
+Description=SLA firmware
+Wants=NetworkManager.service rauc.service model-detect.service model-detect.path
+After=NetworkManager.service rauc.service model-detect.service model-detect.path
+
+[Service]
+Type=dbus
+BusName=cz.prusa3d.sl1.printer0
+Environment=PYTHONUNBUFFERED=1
+Environment=XDG_RUNTIME_DIR=/run/user/0
+ExecStart=/usr/bin/main.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

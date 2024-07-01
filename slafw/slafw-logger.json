@@ -1,0 +1,21 @@
+{
+    "version": 1,
+    "formatters": {
+        "slafw": {
+            "format": "%(levelname)s - %(name)s - %(message)s"
+        }
+    },
+
+    "handlers": {
+        "journald": {
+            "class": "systemd.journal.JournalHandler",
+            "formatter": "slafw",
+            "SYSLOG_IDENTIFIER": "SLAFW"
+        }
+    },
+
+    "root": {
+        "level": "DEBUG",
+        "handlers": ["journald"]
+    }
+}

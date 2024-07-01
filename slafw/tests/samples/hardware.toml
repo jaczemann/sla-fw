@@ -1,0 +1,5 @@
+fan1rpm = 1800
+fan2rpm = 3700
+fan3rpm = 1000
+uvpwm = 204
+towersensitivity = -1

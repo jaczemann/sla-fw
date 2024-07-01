@@ -1,0 +1,4 @@
+fan3pwm = 40
+fan2pwm = 100
+fan1pwm = 60
+uvcurrent = 777.6

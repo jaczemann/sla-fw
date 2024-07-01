@@ -1,0 +1,146 @@
+{
+	"homingFast": {
+		"starting_steprate": 2560,
+		"maximum_steprate": 5120,
+		"acceleration": 240,
+		"deceleration": 240,
+		"current": 20,
+		"stallguard_threshold": 7,
+		"coolstep_threshold": 700
+	},
+	"homingSlow": {
+		"starting_steprate": 1200,
+		"maximum_steprate": 1500,
+		"acceleration": 160,
+		"deceleration": 160,
+		"current": 16,
+		"stallguard_threshold": 7,
+		"coolstep_threshold": 1100
+	},
+	"move120": {
+		"starting_steprate": 100,
+		"maximum_steprate": 120,
+		"acceleration": 10,
+		"deceleration": 10,
+		"current": 11,
+		"stallguard_threshold": 0,
+		"coolstep_threshold": 1500
+	},
+	"layer200": {
+		"starting_steprate": 200,
+		"maximum_steprate": 200,
+		"acceleration": 0,
+		"deceleration": 0,
+		"current": 44,
+		"stallguard_threshold": 63,
+		"coolstep_threshold": 0
+	},
+	"move300": {
+		"starting_steprate": 100,
+		"maximum_steprate": 300,
+		"acceleration": 80,
+		"deceleration": 80,
+		"current": 20,
+		"stallguard_threshold": 0,
+		"coolstep_threshold": 1500
+	},
+	"layer400": {
+		"starting_steprate": 400,
+		"maximum_steprate": 400,
+		"acceleration": 0,
+		"deceleration": 0,
+		"current": 44,
+		"stallguard_threshold": 63,
+		"coolstep_threshold": 0
+	},
+	"layer600": {
+		"starting_steprate": 300,
+		"maximum_steprate": 600,
+		"acceleration": 150,
+		"deceleration": 150,
+		"current": 20,
+		"stallguard_threshold": 0,
+		"coolstep_threshold": 1500
+	},
+	"layer800": {
+		"starting_steprate": 400,
+		"maximum_steprate": 800,
+		"acceleration": 150,
+		"deceleration": 150,
+		"current": 20,
+		"stallguard_threshold": 0,
+		"coolstep_threshold": 1500
+	},
+	"layer1000": {
+		"starting_steprate": 500,
+		"maximum_steprate": 1000,
+		"acceleration": 150,
+		"deceleration": 150,
+		"current": 20,
+		"stallguard_threshold": 0,
+		"coolstep_threshold": 1500
+	},
+	"layer1250": {
+		"starting_steprate": 500,
+		"maximum_steprate": 1250,
+		"acceleration": 150,
+		"deceleration": 150,
+		"current": 20,
+		"stallguard_threshold": 0,
+		"coolstep_threshold": 1500
+	},
+	"layer1500": {
+		"starting_steprate": 1500,
+		"maximum_steprate": 1500,
+		"acceleration": 0,
+		"deceleration": 0,
+		"current": 44,
+		"stallguard_threshold": 40,
+		"coolstep_threshold": 2100
+	},
+	"layer1750": {
+		"starting_steprate": 1750,
+		"maximum_steprate": 1750,
+		"acceleration": 0,
+		"deceleration": 0,
+		"current": 44,
+		"stallguard_threshold": 40,
+		"coolstep_threshold": 2000
+	},
+	"layer2000": {
+		"starting_steprate": 1750,
+		"maximum_steprate": 2000,
+		"acceleration": 150,
+		"deceleration": 150,
+		"current": 44,
+		"stallguard_threshold": 40,
+		"coolstep_threshold": 2000
+	},
+	"layer2250": {
+		"starting_steprate": 1750,
+		"maximum_steprate": 2250,
+		"acceleration": 150,
+		"deceleration": 150,
+		"current": 44,
+		"stallguard_threshold": 40,
+		"coolstep_threshold": 2000
+	},
+	"move5120": {
+		"starting_steprate": 3840,
+		"maximum_steprate": 5120,
+		"acceleration": 80,
+		"deceleration": 80,
+		"current": 16,
+		"stallguard_threshold": 6,
+		"coolstep_threshold": 1500
+	},
+	"move8000": {
+		"starting_steprate": 8000,
+		"maximum_steprate": 8000,
+		"acceleration": 0,
+		"deceleration": 0,
+		"current": 26,
+		"stallguard_threshold": 9,
+		"coolstep_threshold": 700
+	}
+}
