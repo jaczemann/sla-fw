@@ -15,11 +15,11 @@ class RootMenu(AdminMenu):
     def __init__(self, control: AdminControl, printer: Printer):
         super().__init__(control)
 
-        self.add_items(
-            (
-                AdminAction("<b>Leave admin</b>", self.exit, "back_arrow_white"),
-                AdminAction("Settings", lambda: self.enter(SettingsRoot(self._control, printer)), "settings_color"),
-                AdminAction("Hardware", lambda: self.enter(HardwareRoot(self._control, printer)), "usb_color"),
-                AdminAction("Firmware", lambda: self.enter(FirmwareRoot(self._control, printer)), "firmware-icon"),
-            ),
-        )
+        self.add_items((
+        AdminAction("<b>Leave admin</b>", self.exit, "back_arrow_white"),
+        AdminAction("Settings", lambda: self.enter(SettingsRoot(self._control, printer)), "settings_color"),
+        AdminAction("Hardware", lambda: self.enter(HardwareRoot(self._control, printer)), "usb_color"),
+        AdminAction("Firmware", lambda: self.enter(FirmwareRoot(self._control, printer)), "firmware-icon"),
+        AdminAction("Only M1 feature", lambda: self.enter(FirmwareRoot(self._control, printer)), "firmware-icon", menu_whitelist="M1")),
+        printer.hw.printer_model.name)
+

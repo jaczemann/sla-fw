@@ -23,6 +23,7 @@ from slafw.admin.items import (
 
 class AdminMenu(AdminMenuBase):
     def __init__(self, control: AdminControl):
+
         self.logger = logging.getLogger(__name__)
         self._control = control
         self.items_changed = Signal()
@@ -39,16 +40,22 @@ class AdminMenu(AdminMenuBase):
     def exit(self):
         self._control.exit()
 
-    def add_item(self, item: AdminItem, emit_changed=True):
-        if isinstance(item, AdminValue):
-            item.changed.connect(self.value_changed.emit)
-        self._items[item.name] = item
-        if emit_changed:
-            self.items_changed.emit()
+    def add_item(self, item: AdminItem, model, emit_changed=True):
+        # item.menu_whitelist can be either printer model name or a list of whitelisted printer models
+        if model in item.menu_whitelist or "all" in item.menu_whitelist:
+            self.logger.debug(str("item " + item.name + " will be visible for model " + model))
+            if isinstance(item, AdminValue):
+                item.changed.connect(self.value_changed.emit)
+            self._items[item.name] = item
 
-    def add_items(self, items: Iterable[AdminItem]):
+            if emit_changed:
+                self.items_changed.emit()
+        else:
+            self.logger.info(str("item " + item.name + " will be hidden for model " + model))
+
+    def add_items(self, items: Iterable[AdminItem], model):
         for item in items:
-            self.add_item(item, emit_changed=False)
+            self.add_item(item, model, emit_changed=False)
         self.items_changed.emit()
 
     def add_label(self, initial_text: Optional[str]=None, icon=""):

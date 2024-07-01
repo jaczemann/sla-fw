@@ -12,18 +12,19 @@ from PySignal import Signal
 
 from slafw.configs.unit import Unit, Nm, Ms
 
-
 class AdminItem:
     # pylint: disable=too-few-public-methods
     def __init__(
             self,
             name: str,
             icon: str="",
-            enabled: bool=True):
-        self.name = name
-        self.icon = icon
-        self._enabled = enabled
-        self.changed = Signal()
+            enabled: bool=True,
+            menu_whitelist: str="all"):
+            self.menu_whitelist = menu_whitelist
+            self.name = name
+            self.icon = icon
+            self._enabled = enabled
+            self.changed = Signal()
 
     @property
     def enabled(self) -> bool:
@@ -42,9 +43,13 @@ class AdminAction(AdminItem):
             name: str,
             action: Callable,
             icon: str="",
-            enabled: bool=True):
-        super().__init__(name, icon, enabled)
-        self._action = action
+            enabled: bool=True,
+            # ADDED:
+            menu_whitelist: str="all"):
+            super().__init__(name, icon, enabled)
+            self._action = action
+
+            self.menu_whitelist = menu_whitelist
 
     def execute(self):
         self._action()
@@ -58,9 +63,9 @@ class AdminValue(AdminItem):
             setter: Callable,
             icon: str="",
             enabled: bool=True):
-        super().__init__(name, icon, enabled)
-        self._getter = getter
-        self._setter = setter
+            super().__init__(name, icon, enabled)
+            self._getter = getter
+            self._setter = setter
 
     def get_value(self) -> Any:
         return self._getter()
